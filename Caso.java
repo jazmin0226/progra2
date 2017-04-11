@@ -84,4 +84,5 @@ public class Caso { //el nu mero, la descripcio n, el querellante, el juez, el e
      
      
      
+     
 }
