@@ -1,0 +1,50 @@
+   
+ public static boolean verificarCorreo(String correo){
+     Usuario usuario;
+     Usuario existe;
+     Boolean correoCorrecto = false;
+     
+     existe = buscarUsuario(correo);
+     if(existe == null){
+         correoCorrecto = false;
+     }else{
+         correoCorrecto = true;
+     }
+     
+     return correoCorrecto;   
+ }
+ 
+ public static boolean verificarClave(String clave){
+     Usuario usuario;
+     Usuario existe;
+     Boolean claveCorrecta = false;
+     
+     existe = buscarClave(clave);
+     if(existe == null){
+         claveCorrecta = false;
+     }else{
+         claveCorrecta = true;
+     }
+     
+     return claveCorrecta;   
+ }
+
+
+
+ 
+
+ out.println("Ingrese su email");
+            String correo = (in.readLine());
+            boolean correoCorrecto = Gestor.verificarCorreo(correo);
+            if(correoCorrecto == false){
+                String msjCorreo = "Su email no es valido";
+            }else{
+                out.println("Ingrese su clave");
+                String clave = (in.readLine());
+                boolean claveCorrecta = Gestor.verificarClave(clave);
+                if(claveCorrecta == false){
+                    String msjClave = "Su clave no es correcta intentelo de nuevo";
+                }else{
+                    Gestor.listarInbox();
+                }
+            }
